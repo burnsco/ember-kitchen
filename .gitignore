@@ -1,4 +1,7 @@
 node_modules
 dist
+dist-ssr
 .DS_Store
 *.log
+*.local
+tsconfig.tsbuildinfo

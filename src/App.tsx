@@ -7,15 +7,15 @@ import PrivateDining from "./pages/PrivateDining";
 import Reservations from "./pages/Reservations";
 
 const App: React.FC = () => {
-	return (
-		<Routes>
-			<Route path="/" element={<Home />} />
-			<Route path="/menu" element={<Menu />} />
-			<Route path="/reservations" element={<Reservations />} />
-			<Route path="/private-dining" element={<PrivateDining />} />
-			<Route path="/about" element={<About />} />
-		</Routes>
-	);
+  return (
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/menu" element={<Menu />} />
+      <Route path="/reservations" element={<Reservations />} />
+      <Route path="/private-dining" element={<PrivateDining />} />
+      <Route path="/about" element={<About />} />
+    </Routes>
+  );
 };
 
 export default App;

@@ -9,20 +9,19 @@
 }
 
 :root {
-	color-scheme: dark;
-	font-family: var(--font-sans);
-	scroll-behavior: smooth;
+  color-scheme: dark;
+  font-family: var(--font-sans);
+  scroll-behavior: smooth;
 }
 
 body {
-	margin: 0;
-	min-height: 100vh;
-	background-color: #111009;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  min-height: 100vh;
+  background-color: #111009;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 * {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
-
