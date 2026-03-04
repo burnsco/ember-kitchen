@@ -4,26 +4,30 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "bun run typecheck && vite build",
-    "typecheck": "tsc --noEmit",
-    "preview": "vite preview",
+    "dev": "astro dev",
+    "build": "bun run typecheck && astro build",
+    "typecheck": "astro check",
+    "preview": "astro preview",
     "lint": "biome check .",
     "lint:fix": "biome check --write .",
     "format": "biome format --write ."
   },
   "dependencies": {
-    "lucide-react": "^0.575.0",
+    "@astrojs/check": "^0.9.6",
+    "@astrojs/cloudflare": "^12.6.12",
+    "@astrojs/react": "^4.4.2",
+    "@astrojs/tailwind": "^6.0.2",
+    "astro": "^5.18.0",
+    "lucide-astro": "^0.556.0",
     "react": "^19.2.4",
-    "react-dom": "^19.2.4",
-    "react-router-dom": "^7.13.1"
+    "react-dom": "^19.2.4"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.4.5",
     "@tailwindcss/postcss": "^4.2.1",
+    "@tailwindcss/vite": "^4.0.0",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
-    "@vitejs/plugin-react": "^5.1.4",
     "autoprefixer": "^10.4.27",
     "postcss": "^8.5.8",
     "tailwindcss": "^4.2.1",

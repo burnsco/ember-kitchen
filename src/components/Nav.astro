@@ -1,0 +1,44 @@
+---
+const { pathname } = Astro.url;
+
+const navLinks = [
+  { href: "/menu", label: "Menu" },
+  { href: "/reservations", label: "Reservations" },
+  { href: "/private-dining", label: "Private Dining" },
+  { href: "/about", label: "About" },
+];
+
+function isActive(href: string) {
+  if (href === "/" && pathname !== "/") return false;
+  return pathname.startsWith(href);
+}
+---
+
+<nav class="flex flex-wrap items-center justify-between gap-4 border-b border-white/10 pb-5">
+	<a
+		href="/"
+		class="font-serif text-2xl tracking-wide text-[#f5ece1] no-underline"
+	>
+		Ember <span class="text-[#e8632d]">&amp;</span> Kitchen
+	</a>
+	
+	<div class="hidden gap-8 text-sm font-medium text-white/60 md:flex">
+		{navLinks.map(({ href, label }) => (
+			<a
+				href={href}
+				class={`transition-colors no-underline ${isActive(href) ? "text-[#e8a87c]" : "hover:text-[#e8a87c]"}`}
+				data-astro-prefetch
+			>
+				{label}
+			</a>
+		))}
+	</div>
+	
+	<a
+		href="/reservations"
+		class="rounded-full bg-[#e8632d] px-5 py-2.5 text-sm font-bold uppercase tracking-[0.1em] text-white transition-colors hover:bg-[#f07848] no-underline cursor-pointer"
+		data-astro-prefetch
+	>
+		Reserve a Table
+	</a>
+</nav>

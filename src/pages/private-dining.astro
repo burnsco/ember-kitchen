@@ -1,0 +1,309 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+import { Image } from "astro:assets";
+import {
+  Users,
+  GlassWater,
+  ShieldCheck,
+  ArrowRight,
+  Calendar,
+} from "lucide-astro";
+
+const rooms = [
+  {
+    name: "The Hearth Room",
+    capacity: "12 - 24 Guests",
+    description:
+      "An intimate space overlooking our main wood-fired hearth. Perfect for celebrations that want to feel the energy of the kitchen while maintaining privacy.",
+    image:
+      "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=1200&q=80",
+  },
+  {
+    name: "The Cellar Suite",
+    capacity: "8 - 14 Guests",
+    description:
+      "Surrounded by our curated collection of vintage wines. A quiet, sophisticated sanctuary for business dinners or family milestones.",
+    image:
+      "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1200&q=80",
+  },
+  {
+    name: "Grand Ember Hall",
+    capacity: "Up to 50 Guests",
+    description:
+      "Our largest space, featuring cathedral ceilings and a dedicated copper-clad bar. Ideal for corporate events and wedding receptions.",
+    image:
+      "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80",
+  },
+];
+
+const inputClass =
+  "w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-[#f5ece1] placeholder-white/25 outline-none transition-colors focus:border-[#e8632d]/60 focus:bg-white/[0.06]";
+
+const labelClass =
+  "mb-1.5 block text-xs font-medium uppercase tracking-[0.12em] text-white/40";
+---
+
+<Layout title="Private Dining">
+  <div class="mx-auto max-w-7xl px-6 py-7 md:px-10">
+    <Nav />
+
+    {/* Header */}
+    <header class="mt-12 text-center">
+      <p class="text-xs font-bold uppercase tracking-[0.25em] text-[#e8632d]">
+        Exclusive Events
+      </p>
+      <h1 class="mt-4 font-serif text-5xl md:text-7xl">
+        Bespoke <em class="text-[#e8a87c]">Gatherings.</em>
+      </h1>
+      <p class="mx-auto mt-6 max-w-2xl text-[#9a8a7a] leading-relaxed">
+        From corporate retreats to intimate family celebrations, we create
+        unforgettable evenings tailored to your specific vision.
+      </p>
+    </header>
+
+    {/* Features */}
+    <section class="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3">
+      <div class="flex flex-col items-center text-center">
+        <div class="mb-4 text-[#e8a87c]">
+          <Users size={28} />
+        </div>
+        <h3 class="font-serif text-xl">Flexible Spaces</h3>
+        <p class="mt-2 text-sm text-[#9a8a7a]">
+          Rooms for 8 to 50 guests.
+        </p>
+      </div>
+      <div class="flex flex-col items-center text-center">
+        <div class="mb-4 text-[#e8a87c]">
+          <GlassWater size={28} />
+        </div>
+        <h3 class="font-serif text-xl">Custom Menus</h3>
+        <p class="mt-2 text-sm text-[#9a8a7a]">
+          Chef-designed tasting or family-style.
+        </p>
+      </div>
+      <div class="flex flex-col items-center text-center">
+        <div class="mb-4 text-[#e8a87c]">
+          <ShieldCheck size={28} />
+        </div>
+        <h3 class="font-serif text-xl">Dedicated Team</h3>
+        <p class="mt-2 text-sm text-[#9a8a7a]">
+          Personal coordinator for every event.
+        </p>
+      </div>
+    </section>
+
+    {/* Rooms List */}
+    <section class="mt-24 space-y-24">
+      {rooms.map((room, i) => (
+        <div
+          class="grid grid-cols-1 items-center gap-12 lg:grid-cols-2"
+        >
+          <div class={`relative aspect-[4/3] overflow-hidden rounded-[2.5rem] ${i % 2 === 1 ? "lg:order-last" : ""}`}>
+            <Image
+              src={room.image}
+              alt={room.name}
+              width={1200}
+              height={900}
+              class="h-full w-full object-cover transition-transform duration-1000 hover:scale-105"
+            />
+            <div class="absolute top-6 left-6 rounded-full bg-[#111009]/80 px-4 py-2 text-[10px] font-bold uppercase tracking-widest text-[#e8a87c] backdrop-blur-md">
+              Capacity: {room.capacity}
+            </div>
+          </div>
+          <div>
+            <h2 class="font-serif text-4xl md:text-5xl">{room.name}</h2>
+            <p class="mt-6 text-lg leading-relaxed text-[#9a8a7a]">
+              {room.description}
+            </p>
+            <ul class="mt-8 space-y-4">
+              {[
+                "Audiovisual support available",
+                "Private copper bar access",
+                "Custom floral arrangements",
+                "Sommelier-led pairings",
+              ].map((item) => (
+                <li
+                  class="flex items-center gap-3 text-sm text-white/50"
+                >
+                  <div class="h-1.5 w-1.5 rounded-full bg-[#e8632d]" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      ))}
+    </section>
+
+    {/* Enquiry Form */}
+    <section
+      id="enquire"
+      class="mt-32 rounded-[3.5rem] bg-[#1a140d] border border-white/5 overflow-hidden"
+    >
+      <div class="grid grid-cols-1 lg:grid-cols-2">
+        <div class="p-10 md:p-16 lg:border-r lg:border-white/5">
+          <p class="text-xs font-bold uppercase tracking-[0.25em] text-[#e8632d]">
+            Plan Your Event
+          </p>
+          <h2 class="mt-4 font-serif text-4xl md:text-5xl">
+            Enquire Now
+          </h2>
+          <p class="mt-6 text-[#9a8a7a]">
+            Our event coordinator will contact you within 24 hours to begin
+            tailoring your experience.
+          </p>
+
+          <div id="success-message" class="hidden mt-12 text-center py-10">
+            <div class="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-[#e8632d]/20 text-[#e8632d]">
+              <Calendar size={40} />
+            </div>
+            <h3 class="font-serif text-3xl">Request Received</h3>
+            <p class="mt-4 text-[#9a8a7a]">
+              We'll be in touch very soon to discuss your special event.
+            </p>
+            <button
+              id="reset-form"
+              type="button"
+              class="mt-8 text-sm text-[#e8a87c] underline cursor-pointer"
+            >
+              Send another enquiry
+            </button>
+          </div>
+
+          <form id="enquiry-form" class="mt-10 space-y-6">
+            <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+              <div>
+                <label for="name" class={labelClass}>
+                  Full Name
+                </label>
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  required
+                  placeholder="Alexander Knight"
+                  class={inputClass}
+                />
+              </div>
+              <div>
+                <label for="email" class={labelClass}>
+                  Email Address
+                </label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  required
+                  placeholder="alex@company.com"
+                  class={inputClass}
+                />
+              </div>
+            </div>
+            <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+              <div>
+                <label for="date" class={labelClass}>
+                  Ideal Date
+                </label>
+                <input
+                  id="date"
+                  name="date"
+                  type="date"
+                  required
+                  class={inputClass}
+                />
+              </div>
+              <div>
+                <label for="guests" class={labelClass}>
+                  Expected Guests
+                </label>
+                <input
+                  id="guests"
+                  name="guests"
+                  type="number"
+                  placeholder="20"
+                  class={inputClass}
+                />
+              </div>
+            </div>
+            <div>
+              <label for="type" class={labelClass}>
+                Event Type
+              </label>
+              <select id="type" name="type" class={inputClass}>
+                <option value="" class="bg-[#1a140d]">
+                  Select type...
+                </option>
+                <option value="corporate" class="bg-[#1a140d]">
+                  Corporate Dinner
+                </option>
+                <option value="wedding" class="bg-[#1a140d]">
+                  Wedding Reception
+                </option>
+                <option value="birthday" class="bg-[#1a140d]">
+                  Birthday Celebration
+                </option>
+                <option value="other" class="bg-[#1a140d]">
+                  Other Milestone
+                </option>
+              </select>
+            </div>
+            <div>
+              <label for="notes" class={labelClass}>
+                Additional Details
+              </label>
+              <textarea
+                id="notes"
+                name="notes"
+                rows={4}
+                placeholder="Tell us about your vision, dietary needs, or specific room preferences..."
+                class={`${inputClass} resize-none`}
+              />
+            </div>
+            <button
+              type="submit"
+              class="group flex w-full items-center justify-center gap-3 rounded-full bg-[#e8632d] py-4 text-sm font-bold uppercase tracking-widest text-white transition-all hover:bg-[#f07848] cursor-pointer"
+            >
+              Send Enquiry{" "}
+              <ArrowRight
+                size={18}
+                class="transition-transform group-hover:translate-x-1"
+              />
+            </button>
+          </form>
+        </div>
+        <div class="hidden lg:block relative">
+          <Image
+            src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=1200&q=80"
+            alt="Restaurant interior"
+            width={1200}
+            height={1600}
+            class="h-full w-full object-cover opacity-60 grayscale hover:grayscale-0 transition-all duration-1000"
+          />
+          <div class="absolute inset-0 bg-gradient-to-r from-[#1a140d] to-transparent" />
+        </div>
+      </div>
+    </section>
+
+    <Footer />
+  </div>
+</Layout>
+
+<script>
+  const form = document.getElementById('enquiry-form') as HTMLFormElement;
+  const successMessage = document.getElementById('success-message');
+  const resetBtn = document.getElementById('reset-form');
+
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    form.classList.add('hidden');
+    successMessage?.classList.remove('hidden');
+  });
+
+  resetBtn?.addEventListener('click', () => {
+    form.reset();
+    form.classList.remove('hidden');
+    successMessage?.classList.add('hidden');
+  });
+</script>
