@@ -1,7 +1,7 @@
 {
   "name": "ember-kitchen",
-  "private": true,
   "version": "1.0.0",
+  "private": true,
   "type": "module",
   "scripts": {
     "dev": "astro dev",
@@ -9,16 +9,17 @@
     "typecheck": "astro check",
     "preview": "astro preview",
     "lint": "oxlint",
-    "lint:fix": "biome check --write .",
+    "lint:fix": "oxlint --fix . && oxfmt",
     "format": "oxfmt",
-    "prepare": "husky"
+    "prepare": "husky",
+    "check": "astro check"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.7",
     "@astrojs/cloudflare": "^12.6.13",
     "@astrojs/react": "^5.0.0",
     "@astrojs/tailwind": "^6.0.2",
-    "astro": "^6.0.1",
+    "astro": "^6.0.3",
     "lucide-astro": "^0.556.0",
     "react": "^19.2.4",
     "react-dom": "^19.2.4"
@@ -29,14 +30,14 @@
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "autoprefixer": "^10.4.27",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.3.3",
+    "oxfmt": "^0.37.0",
+    "oxlint": "^1.53.0",
     "postcss": "^8.5.8",
     "tailwindcss": "^4.2.1",
     "typescript": "^5.9.3",
-    "vite": "^7.3.1",
-    "oxlint": "^1.52.0",
-    "oxfmt": "^0.37.0",
-    "husky": "^9.1.7",
-    "lint-staged": "^16.3.3"
+    "vite": "^7.3.1"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
