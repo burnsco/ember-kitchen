@@ -6,6 +6,9 @@
   "scripts": {
     "dev": "astro dev",
     "build": "bun run typecheck && astro build",
+    "deploy": "bun run build && npx wrangler deploy",
+    "deploy:dry-run": "npx wrangler deploy --dry-run",
+    "cf:status": "../scripts/cf-portfolio.sh status ember-kitchen",
     "typecheck": "astro check",
     "preview": "astro preview",
     "lint": "oxlint",
