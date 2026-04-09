@@ -7,6 +7,7 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
   output: "static",
   adapter: cloudflare(),
+  site: "https://ember-kitchen.coreyburns.ca",
   integrations: [react()],
   vite: {
     plugins: [tailwindcss()],
