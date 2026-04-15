@@ -39,7 +39,7 @@ const rooms = [
 ];
 
 const inputClass =
-  "w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-[#f5ece1] placeholder-white/25 outline-none transition-colors focus:border-[#e8632d]/60 focus:bg-white/[0.06]";
+  "w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-linen placeholder-white/25 outline-none transition-colors focus:border-ember/60 focus:bg-white/[0.06]";
 
 const labelClass =
   "mb-1.5 block text-xs font-medium uppercase tracking-[0.12em] text-white/40";
@@ -51,13 +51,13 @@ const labelClass =
 
     {/* Header */}
     <header class="mt-12 text-center">
-      <p class="text-xs font-bold uppercase tracking-[0.25em] text-[#e8632d]">
+      <p class="text-xs font-bold uppercase tracking-[0.25em] text-ember">
         Exclusive Events
       </p>
       <h1 class="mt-4 font-serif text-5xl md:text-7xl">
-        Bespoke <em class="text-[#e8a87c]">Gatherings.</em>
+        Bespoke <em class="text-ember-warm">Gatherings.</em>
       </h1>
-      <p class="mx-auto mt-6 max-w-2xl text-[#9a8a7a] leading-relaxed">
+      <p class="mx-auto mt-6 max-w-2xl text-ash leading-relaxed">
         From corporate retreats to intimate family celebrations, we create
         unforgettable evenings tailored to your specific vision.
       </p>
@@ -66,29 +66,29 @@ const labelClass =
     {/* Features */}
     <section class="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3">
       <div class="flex flex-col items-center text-center">
-        <div class="mb-4 text-[#e8a87c]">
+        <div class="mb-4 text-ember-warm">
           <Users size={28} />
         </div>
         <h3 class="font-serif text-xl">Flexible Spaces</h3>
-        <p class="mt-2 text-sm text-[#9a8a7a]">
+        <p class="mt-2 text-sm text-ash">
           Rooms for 8 to 50 guests.
         </p>
       </div>
       <div class="flex flex-col items-center text-center">
-        <div class="mb-4 text-[#e8a87c]">
+        <div class="mb-4 text-ember-warm">
           <GlassWater size={28} />
         </div>
         <h3 class="font-serif text-xl">Custom Menus</h3>
-        <p class="mt-2 text-sm text-[#9a8a7a]">
+        <p class="mt-2 text-sm text-ash">
           Chef-designed tasting or family-style.
         </p>
       </div>
       <div class="flex flex-col items-center text-center">
-        <div class="mb-4 text-[#e8a87c]">
+        <div class="mb-4 text-ember-warm">
           <ShieldCheck size={28} />
         </div>
         <h3 class="font-serif text-xl">Dedicated Team</h3>
-        <p class="mt-2 text-sm text-[#9a8a7a]">
+        <p class="mt-2 text-sm text-ash">
           Personal coordinator for every event.
         </p>
       </div>
@@ -108,13 +108,13 @@ const labelClass =
               height={900}
               class="h-full w-full object-cover transition-transform duration-1000 hover:scale-105"
             />
-            <div class="absolute top-6 left-6 rounded-full bg-[#111009]/80 px-4 py-2 text-[10px] font-bold uppercase tracking-widest text-[#e8a87c] backdrop-blur-md">
+            <div class="absolute top-6 left-6 rounded-full bg-pitch/80 px-4 py-2 text-[10px] font-bold uppercase tracking-widest text-ember-warm backdrop-blur-md">
               Capacity: {room.capacity}
             </div>
           </div>
           <div>
             <h2 class="font-serif text-4xl md:text-5xl">{room.name}</h2>
-            <p class="mt-6 text-lg leading-relaxed text-[#9a8a7a]">
+            <p class="mt-6 text-lg leading-relaxed text-ash">
               {room.description}
             </p>
             <ul class="mt-8 space-y-4">
@@ -127,7 +127,7 @@ const labelClass =
                 <li
                   class="flex items-center gap-3 text-sm text-white/50"
                 >
-                  <div class="h-1.5 w-1.5 rounded-full bg-[#e8632d]" />
+                  <div class="h-1.5 w-1.5 rounded-full bg-ember" />
                   {item}
                 </li>
               ))}
@@ -140,33 +140,33 @@ const labelClass =
     {/* Enquiry Form */}
     <section
       id="enquire"
-      class="mt-32 rounded-[3.5rem] bg-[#1a140d] border border-white/5 overflow-hidden"
+      class="mt-32 rounded-[3.5rem] bg-hearth border border-white/5 overflow-hidden"
     >
       <div class="grid grid-cols-1 lg:grid-cols-2">
         <div class="p-10 md:p-16 lg:border-r lg:border-white/5">
-          <p class="text-xs font-bold uppercase tracking-[0.25em] text-[#e8632d]">
+          <p class="text-xs font-bold uppercase tracking-[0.25em] text-ember">
             Plan Your Event
           </p>
           <h2 class="mt-4 font-serif text-4xl md:text-5xl">
             Enquire Now
           </h2>
-          <p class="mt-6 text-[#9a8a7a]">
+          <p class="mt-6 text-ash">
             Our event coordinator will contact you within 24 hours to begin
             tailoring your experience.
           </p>
 
           <div id="success-message" class="hidden mt-12 text-center py-10">
-            <div class="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-[#e8632d]/20 text-[#e8632d]">
+            <div class="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-ember/20 text-ember">
               <Calendar size={40} />
             </div>
             <h3 class="font-serif text-3xl">Request Received</h3>
-            <p class="mt-4 text-[#9a8a7a]">
+            <p class="mt-4 text-ash">
               We'll be in touch very soon to discuss your special event.
             </p>
             <button
               id="reset-form"
               type="button"
-              class="mt-8 text-sm text-[#e8a87c] underline cursor-pointer"
+              class="mt-8 text-sm text-ember-warm underline cursor-pointer"
             >
               Send another enquiry
             </button>
@@ -232,19 +232,19 @@ const labelClass =
                 Event Type
               </label>
               <select id="type" name="type" class={inputClass}>
-                <option value="" class="bg-[#1a140d]">
+                <option value="" class="bg-hearth">
                   Select type...
                 </option>
-                <option value="corporate" class="bg-[#1a140d]">
+                <option value="corporate" class="bg-hearth">
                   Corporate Dinner
                 </option>
-                <option value="wedding" class="bg-[#1a140d]">
+                <option value="wedding" class="bg-hearth">
                   Wedding Reception
                 </option>
-                <option value="birthday" class="bg-[#1a140d]">
+                <option value="birthday" class="bg-hearth">
                   Birthday Celebration
                 </option>
-                <option value="other" class="bg-[#1a140d]">
+                <option value="other" class="bg-hearth">
                   Other Milestone
                 </option>
               </select>
@@ -263,7 +263,7 @@ const labelClass =
             </div>
             <button
               type="submit"
-              class="group flex w-full items-center justify-center gap-3 rounded-full bg-[#e8632d] py-4 text-sm font-bold uppercase tracking-widest text-white transition-all hover:bg-[#f07848] cursor-pointer"
+              class="group flex w-full items-center justify-center gap-3 rounded-full bg-ember py-4 text-sm font-bold uppercase tracking-widest text-white transition-all hover:bg-ember-glow cursor-pointer"
             >
               Send Enquiry{" "}
               <ArrowRight
@@ -281,7 +281,7 @@ const labelClass =
             height={1600}
             class="h-full w-full object-cover opacity-60 grayscale hover:grayscale-0 transition-all duration-1000"
           />
-          <div class="absolute inset-0 bg-gradient-to-r from-[#1a140d] to-transparent" />
+          <div class="absolute inset-0 bg-gradient-to-r from-hearth to-transparent" />
         </div>
       </div>
     </section>

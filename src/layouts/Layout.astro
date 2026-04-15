@@ -13,7 +13,7 @@ const {
 ---
 
 <!doctype html>
-<html lang="en" class="bg-[#111009] text-[#f5ece1] selection:bg-[#e8632d] selection:text-[#111009]">
+<html lang="en" class="bg-pitch text-linen selection:bg-ember selection:text-pitch">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
@@ -21,23 +21,10 @@ const {
 		<meta name="generator" content={Astro.generator} />
 		<title>{title} | Ember & Kitchen</title>
 		<meta name="description" content={description} />
-		
+
 		<!-- Preconnect to Google Fonts -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		
-		<style is:global>
-			/* Smooth scrolling */
-			html {
-				scroll-behavior: smooth;
-			}
-			
-			/* Custom font-family defaults */
-			:root {
-				--font-serif: "Fraunces", serif;
-				--font-sans: "Space Grotesk", sans-serif;
-			}
-		</style>
 	</head>
 	<body class="min-h-screen">
 		<slot />

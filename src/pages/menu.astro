@@ -115,16 +115,16 @@ const wines = [
 
     {/* Hero */}
     <header class="mt-10 mb-14 text-center">
-      <p class="text-xs font-bold uppercase tracking-[0.25em] text-[#e8632d]">
+      <p class="text-xs font-bold uppercase tracking-[0.25em] text-ember">
         Seasonal · Locally Sourced · Chef-Led
       </p>
       <h1 class="mt-4 font-serif text-6xl md:text-7xl">Our Menu</h1>
-      <p class="mx-auto mt-5 max-w-xl text-[#9a8a7a] leading-relaxed">
+      <p class="mx-auto mt-5 max-w-xl text-ash leading-relaxed">
         Every dish is shaped by the season and the fire. Our menu changes
         regularly to honour what's freshest within 100 miles of our kitchen.
       </p>
       <div class="mt-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-5 py-2.5 text-xs text-white/50">
-        <Leaf size={12} class="text-[#e8632d]" />
+        <Leaf size={12} class="text-ember" />
         Menu subject to change based on seasonal availability
       </div>
     </header>
@@ -132,7 +132,7 @@ const wines = [
     {/* Starters */}
     <section class="mb-16">
       <div class="mb-8">
-        <p class="text-xs font-bold uppercase tracking-[0.25em] text-[#e8632d]">
+        <p class="text-xs font-bold uppercase tracking-[0.25em] text-ember">
           To Begin
         </p>
         <h2 class="mt-2 font-serif text-4xl">Starters</h2>
@@ -140,22 +140,22 @@ const wines = [
       <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
         {starters.map((item) => (
           <div
-            class="flex items-start justify-between gap-4 rounded-2xl border border-white/10 bg-[#1a140d] p-6"
+            class="flex items-start justify-between gap-4 rounded-2xl border border-white/10 bg-hearth p-6"
           >
             <div class="flex-1">
               <div class="flex flex-wrap items-center gap-2">
                 <h3 class="font-serif text-xl">{item.dish}</h3>
                 {item.tags.map((tag) => (
                   <span
-                    class="rounded-full bg-[#e8632d]/15 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-[0.15em] text-[#e8632d]"
+                    class="rounded-full bg-ember/15 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-[0.15em] text-ember"
                   >
                     {tag}
                   </span>
                 ))}
               </div>
-              <p class="mt-1.5 text-sm text-[#9a8a7a]">{item.desc}</p>
+              <p class="mt-1.5 text-sm text-ash">{item.desc}</p>
             </div>
-            <span class="shrink-0 font-medium text-[#e8a87c]">
+            <span class="shrink-0 font-medium text-ember-warm">
               {item.price}
             </span>
           </div>
@@ -166,7 +166,7 @@ const wines = [
     {/* Mains */}
     <section class="mb-16">
       <div class="mb-8">
-        <p class="text-xs font-bold uppercase tracking-[0.25em] text-[#e8632d]">
+        <p class="text-xs font-bold uppercase tracking-[0.25em] text-ember">
           The Heart of the Menu
         </p>
         <h2 class="mt-2 font-serif text-4xl">Mains</h2>
@@ -174,7 +174,7 @@ const wines = [
       <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
         {mains.map((item) => (
           <div
-            class="group overflow-hidden rounded-3xl border border-white/10 bg-[#1a140d]"
+            class="group overflow-hidden rounded-3xl border border-white/10 bg-hearth"
           >
             <div class="aspect-[16/7] overflow-hidden">
               <Image
@@ -190,15 +190,15 @@ const wines = [
                 <h3 class="font-serif text-2xl">{item.dish}</h3>
                 {item.tags.map((tag) => (
                   <span
-                    class="rounded-full bg-[#e8632d]/15 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-[0.15em] text-[#e8632d]"
+                    class="rounded-full bg-ember/15 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-[0.15em] text-ember"
                   >
                     {tag}
                   </span>
                 ))}
               </div>
-              <p class="mt-2 text-sm text-[#9a8a7a]">{item.desc}</p>
+              <p class="mt-2 text-sm text-ash">{item.desc}</p>
               <div class="mt-4 flex items-center justify-between">
-                <span class="font-medium text-[#e8a87c]">
+                <span class="font-medium text-ember-warm">
                   {item.price}
                 </span>
                 <span class="text-xs uppercase tracking-[0.18em] text-white/30">
@@ -214,7 +214,7 @@ const wines = [
     {/* Desserts */}
     <section class="mb-16">
       <div class="mb-8">
-        <p class="text-xs font-bold uppercase tracking-[0.25em] text-[#e8632d]">
+        <p class="text-xs font-bold uppercase tracking-[0.25em] text-ember">
           A Sweet Conclusion
         </p>
         <h2 class="mt-2 font-serif text-4xl">Desserts</h2>
@@ -222,11 +222,11 @@ const wines = [
       <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
         {desserts.map((item) => (
           <div
-            class="rounded-2xl border border-white/10 bg-[#1a140d] p-6"
+            class="rounded-2xl border border-white/10 bg-hearth p-6"
           >
             <h3 class="font-serif text-xl">{item.dish}</h3>
-            <p class="mt-1.5 text-sm text-[#9a8a7a]">{item.desc}</p>
-            <p class="mt-4 font-medium text-[#e8a87c]">{item.price}</p>
+            <p class="mt-1.5 text-sm text-ash">{item.desc}</p>
+            <p class="mt-4 font-medium text-ember-warm">{item.price}</p>
           </div>
         ))}
       </div>
@@ -235,7 +235,7 @@ const wines = [
     {/* Wine */}
     <section class="mb-10">
       <div class="mb-8">
-        <p class="text-xs font-bold uppercase tracking-[0.25em] text-[#e8632d]">
+        <p class="text-xs font-bold uppercase tracking-[0.25em] text-ember">
           Curated Selections
         </p>
         <h2 class="mt-2 font-serif text-4xl">Wine & Pairings</h2>
@@ -248,10 +248,10 @@ const wines = [
             }`}
           >
             <div>
-              <p class="font-medium text-[#f5ece1]">{wine.name}</p>
-              <p class="text-xs text-[#9a8a7a]">{wine.region}</p>
+              <p class="font-medium text-linen">{wine.name}</p>
+              <p class="text-xs text-ash">{wine.region}</p>
             </div>
-            <span class="shrink-0 text-sm font-medium text-[#e8a87c]">
+            <span class="shrink-0 text-sm font-medium text-ember-warm">
               {wine.price}
               <span class="text-white/30"> / glass · btl</span>
             </span>
@@ -265,16 +265,23 @@ const wines = [
     </section>
 
     {/* Tasting Menu CTA */}
-    <section class="rounded-3xl bg-[#1a140d] border border-[#e8632d]/20 p-8 text-center">
+    <section class="rounded-3xl bg-hearth border border-ember/20 p-8 text-center">
       <h3 class="font-serif text-3xl">Experience the Tasting Menu</h3>
-      <p class="mx-auto mt-3 max-w-md text-sm text-[#9a8a7a]">
+      <p class="mx-auto mt-3 max-w-md text-sm text-ash">
         Seven courses guided by Chef Marlowe, paired with wines from our
         cellar. Available Tuesday through Saturday evenings.
       </p>
-      <p class="mt-2 text-2xl font-serif text-[#e8a87c]">
+      <p class="mt-2 text-2xl font-serif text-ember-warm">
         $145{" "}
         <span class="text-sm text-white/40 font-sans">per person</span>
       </p>
+      <a
+        href="/reservations"
+        class="mt-6 inline-flex items-center gap-2 rounded-full bg-ember px-7 py-3.5 text-sm font-bold uppercase tracking-[0.12em] text-white transition-colors hover:bg-ember-glow no-underline"
+        data-astro-prefetch
+      >
+        Reserve a Table
+      </a>
     </section>
 
     <Footer />

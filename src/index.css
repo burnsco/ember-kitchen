@@ -6,6 +6,15 @@
 @theme {
   --font-serif: "Fraunces", serif;
   --font-sans: "Space Grotesk", sans-serif;
+
+  /* Brand palette — update these to retheme the whole site */
+  --color-ember: #e8632d;
+  --color-ember-glow: #f07848;
+  --color-ember-warm: #e8a87c;
+  --color-pitch: #111009;
+  --color-hearth: #1a140d;
+  --color-ash: #9a8a7a;
+  --color-linen: #f5ece1;
 }
 
 :root {
@@ -17,7 +26,7 @@
 body {
   margin: 0;
   min-height: 100vh;
-  background-color: #111009;
+  background-color: var(--color-pitch);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

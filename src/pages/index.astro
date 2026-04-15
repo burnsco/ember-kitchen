@@ -45,9 +45,9 @@ const menu = [
 					class="h-full min-h-[500px] w-full object-cover"
 					loading="eager"
 				/>
-				<div class="absolute inset-0 bg-gradient-to-t from-[#111009]/80 via-[#111009]/20 to-transparent"></div>
+				<div class="absolute inset-0 bg-gradient-to-t from-pitch/80 via-pitch/20 to-transparent"></div>
 				<div class="absolute bottom-8 left-8 right-8">
-					<div class="flex items-center gap-1 text-[#e8a87c]">
+					<div class="flex items-center gap-1 text-ember-warm">
 						{[...Array(5)].map(() => (
 							<Star size={14} fill="currentColor" />
 						))}
@@ -61,15 +61,15 @@ const menu = [
 
 			<div class="flex flex-col justify-center gap-7">
 				<div>
-					<p class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.25em] text-[#e8632d]">
+					<p class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.25em] text-ember">
 						<Utensils size={13} /> Open Nightly · Tasting Menu Available
 					</p>
 					<h1 class="mt-5 font-serif text-5xl leading-[1.0] md:text-7xl">
 						Where fire
 						<br />
-						meets <em class="text-[#e8a87c]">flavour.</em>
+						meets <em class="text-ember-warm">flavour.</em>
 					</h1>
-					<p class="mt-6 leading-relaxed text-[#9a8a7a]">
+					<p class="mt-6 leading-relaxed text-ash">
 						A sanctuary of ember-cooked cuisine in the heart of the city.
 						Chef-led tasting menus, curated wine pairings, and ingredients
 						sourced within 100 miles.
@@ -78,7 +78,7 @@ const menu = [
 				<div class="flex flex-col gap-3 sm:flex-row">
 					<a
 						href="/reservations"
-						class="inline-flex items-center justify-center gap-2 rounded-full bg-[#e8632d] px-7 py-3.5 text-sm font-bold uppercase tracking-[0.12em] text-white transition-colors hover:bg-[#f07848] no-underline"
+						class="inline-flex items-center justify-center gap-2 rounded-full bg-ember px-7 py-3.5 text-sm font-bold uppercase tracking-[0.12em] text-white transition-colors hover:bg-ember-glow no-underline"
 						data-astro-prefetch
 					>
 						Book Tonight <ArrowRight size={15} />
@@ -93,12 +93,12 @@ const menu = [
 				</div>
 				<div class="grid grid-cols-2 gap-3">
 					<div class="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
-						<Clock size={16} class="text-[#e8632d]" />
+						<Clock size={16} class="text-ember" />
 						<p class="mt-2 text-sm font-medium">Tue – Sun</p>
 						<p class="text-xs text-white/50">5:30 PM – 11:00 PM</p>
 					</div>
 					<div class="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
-						<MapPin size={16} class="text-[#e8632d]" />
+						<MapPin size={16} class="text-ember" />
 						<p class="mt-2 text-sm font-medium">14 Driftwood Lane</p>
 						<p class="text-xs text-white/50">Lower East Side, NY</p>
 					</div>
@@ -112,7 +112,7 @@ const menu = [
 			<div class="grid grid-cols-1 gap-5 md:grid-cols-3">
 				{menu.map((item) => (
 					<article
-						class="group overflow-hidden rounded-3xl border border-white/10 bg-[#1a140d]"
+						class="group overflow-hidden rounded-3xl border border-white/10 bg-hearth"
 					>
 						<div class="aspect-video overflow-hidden">
 							<Image
@@ -125,9 +125,9 @@ const menu = [
 						</div>
 						<div class="p-5">
 							<h3 class="font-serif text-xl">{item.dish}</h3>
-							<p class="mt-1.5 text-sm text-[#9a8a7a]">{item.desc}</p>
+							<p class="mt-1.5 text-sm text-ash">{item.desc}</p>
 							<div class="mt-4 flex items-center justify-between">
-								<span class="font-medium text-[#e8a87c]">
+								<span class="font-medium text-ember-warm">
 									{item.price}
 								</span>
 								<span class="text-xs uppercase tracking-[0.18em] text-white/40">
@@ -141,7 +141,7 @@ const menu = [
 			<div class="mt-6 text-center">
 				<a
 					href="/menu"
-					class="inline-flex items-center gap-2 text-sm font-medium text-[#e8a87c] transition-colors hover:text-[#e8632d] no-underline"
+					class="inline-flex items-center gap-2 text-sm font-medium text-ember-warm transition-colors hover:text-ember no-underline"
 					data-astro-prefetch
 				>
 					View full menu <ArrowRight size={14} />
@@ -150,7 +150,7 @@ const menu = [
 		</section>
 
 		{/* Reservation CTA */}
-		<section class="mt-8 rounded-3xl bg-[#e8632d] p-8 md:flex md:items-center md:justify-between">
+		<section class="mt-8 rounded-3xl bg-ember p-8 md:flex md:items-center md:justify-between">
 			<div>
 				<h3 class="font-serif text-3xl text-white">
 					Make it a night to remember.
@@ -161,7 +161,7 @@ const menu = [
 			</div>
 			<a
 				href="/reservations"
-				class="mt-5 inline-flex items-center gap-2 rounded-full bg-[#111009] px-7 py-3.5 text-sm font-bold uppercase tracking-[0.12em] text-white transition-colors hover:bg-[#2a1e14] md:mt-0 no-underline"
+				class="mt-5 inline-flex items-center gap-2 rounded-full bg-pitch px-7 py-3.5 text-sm font-bold uppercase tracking-[0.12em] text-white transition-colors hover:bg-[#2a1e14] md:mt-0 no-underline"
 				data-astro-prefetch
 			>
 				Enquire Now <ArrowRight size={15} />

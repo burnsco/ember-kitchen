@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
-import { ArrowRight, Clock, Info, MapPin, Phone } from "lucide-astro";
+import { CheckCircle2, Clock, Info, MapPin, Phone } from "lucide-astro";
 
 const times = [
   "5:30 PM",
@@ -28,7 +28,7 @@ const occasions = [
 ];
 
 const inputClass =
-  "w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-[#f5ece1] placeholder-white/25 outline-none transition-colors focus:border-[#e8632d]/60 focus:bg-white/[0.06]";
+  "w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-linen placeholder-white/25 outline-none transition-colors focus:border-ember/60 focus:bg-white/[0.06]";
 
 const labelClass =
   "mb-1.5 block text-xs font-medium uppercase tracking-[0.12em] text-white/40";
@@ -41,24 +41,24 @@ const labelClass =
     <div class="mt-12 grid grid-cols-1 gap-12 lg:grid-cols-5">
       {/* Form */}
       <div class="lg:col-span-3">
-        <p class="text-xs font-bold uppercase tracking-[0.25em] text-[#e8632d]">
+        <p class="text-xs font-bold uppercase tracking-[0.25em] text-ember">
           Secure Your Evening
         </p>
         <h1 class="mt-3 font-serif text-5xl md:text-6xl">
           Reserve a Table
         </h1>
-        <p class="mt-4 text-[#9a8a7a] leading-relaxed">
+        <p class="mt-4 text-ash leading-relaxed">
           We recommend booking at least 48 hours in advance. For same-day
           reservations, please call us directly.
         </p>
 
-        <div id="success-message" class="hidden mt-10 rounded-3xl border border-[#e8632d]/30 bg-[#e8632d]/10 p-8 text-center">
-          <div class="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-[#e8632d]/20">
-            <ArrowRight size={24} class="text-[#e8632d]" />
+        <div id="success-message" class="hidden mt-10 rounded-3xl border border-ember/30 bg-ember/10 p-8 text-center">
+          <div class="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-ember/20">
+            <CheckCircle2 size={24} class="text-ember" />
           </div>
           <h2 class="font-serif text-3xl">We'll see you soon.</h2>
-          <p class="mt-3 text-sm text-[#9a8a7a]">
-            A confirmation has been sent to <span id="display-email" class="text-[#e8a87c]">your email</span>. We look
+          <p class="mt-3 text-sm text-ash">
+            A confirmation has been sent to <span id="display-email" class="text-ember-warm">your email</span>. We look
             forward to welcoming you to Ember &amp; Kitchen.
           </p>
           <button
@@ -123,11 +123,11 @@ const labelClass =
                 class={inputClass}
               >
                 {Array.from({ length: 7 }, (_, i) => i + 1).map((n) => (
-                  <option value={n} class="bg-[#1a140d]">
+                  <option value={n} class="bg-hearth">
                     {n} {n === 1 ? "Guest" : "Guests"}
                   </option>
                 ))}
-                <option value="8+" class="bg-[#1a140d]">
+                <option value="8+" class="bg-hearth">
                   8+ Guests (Private Dining)
                 </option>
               </select>
@@ -157,11 +157,11 @@ const labelClass =
                 required
                 class={inputClass}
               >
-                <option value="" class="bg-[#1a140d]">
+                <option value="" class="bg-hearth">
                   Select a time
                 </option>
                 {times.map((t) => (
-                  <option value={t} class="bg-[#1a140d]">
+                  <option value={t} class="bg-hearth">
                     {t}
                   </option>
                 ))}
@@ -179,7 +179,7 @@ const labelClass =
               class={inputClass}
             >
               {occasions.map((o) => (
-                <option value={o} class="bg-[#1a140d]">
+                <option value={o} class="bg-hearth">
                   {o || "Select an occasion"}
                 </option>
               ))}
@@ -201,7 +201,7 @@ const labelClass =
 
           <button
             type="submit"
-            class="w-full rounded-full bg-[#e8632d] py-4 text-sm font-bold uppercase tracking-[0.12em] text-white transition-colors hover:bg-[#f07848] cursor-pointer"
+            class="w-full rounded-full bg-ember py-4 text-sm font-bold uppercase tracking-[0.12em] text-white transition-colors hover:bg-ember-glow cursor-pointer"
           >
             Confirm Reservation
           </button>
@@ -216,10 +216,10 @@ const labelClass =
       {/* Info Panel */}
       <div class="lg:col-span-2 space-y-5">
         {/* Hours */}
-        <div class="rounded-3xl border border-white/10 bg-[#1a140d] p-6">
+        <div class="rounded-3xl border border-white/10 bg-hearth p-6">
           <div class="mb-4 flex items-center gap-2">
-            <Clock size={15} class="text-[#e8632d]" />
-            <h3 class="text-xs font-bold uppercase tracking-[0.2em] text-[#e8632d]">
+            <Clock size={15} class="text-ember" />
+            <h3 class="text-xs font-bold uppercase tracking-[0.2em] text-ember">
               Hours
             </h3>
           </div>
@@ -234,7 +234,7 @@ const labelClass =
                 <span class="text-white/50">{day}</span>
                 <span
                   class={
-                    hours === "Closed" ? "text-white/25" : "text-[#e8a87c]"
+                    hours === "Closed" ? "text-white/25" : "text-ember-warm"
                   }
                 >
                   {hours}
@@ -245,10 +245,10 @@ const labelClass =
         </div>
 
         {/* Location */}
-        <div class="rounded-3xl border border-white/10 bg-[#1a140d] p-6">
+        <div class="rounded-3xl border border-white/10 bg-hearth p-6">
           <div class="mb-4 flex items-center gap-2">
-            <MapPin size={15} class="text-[#e8632d]" />
-            <h3 class="text-xs font-bold uppercase tracking-[0.2em] text-[#e8632d]">
+            <MapPin size={15} class="text-ember" />
+            <h3 class="text-xs font-bold uppercase tracking-[0.2em] text-ember">
               Location
             </h3>
           </div>
@@ -261,14 +261,14 @@ const labelClass =
         </div>
 
         {/* Phone */}
-        <div class="rounded-3xl border border-white/10 bg-[#1a140d] p-6">
+        <div class="rounded-3xl border border-white/10 bg-hearth p-6">
           <div class="mb-4 flex items-center gap-2">
-            <Phone size={15} class="text-[#e8632d]" />
-            <h3 class="text-xs font-bold uppercase tracking-[0.2em] text-[#e8632d]">
+            <Phone size={15} class="text-ember" />
+            <h3 class="text-xs font-bold uppercase tracking-[0.2em] text-ember">
               By Phone
             </h3>
           </div>
-          <p class="font-serif text-2xl text-[#f5ece1]">
+          <p class="font-serif text-2xl text-linen">
             (212) 555-0174
           </p>
           <p class="mt-2 text-xs text-white/30">
@@ -277,8 +277,8 @@ const labelClass =
         </div>
 
         {/* Large groups note */}
-        <div class="rounded-3xl bg-[#e8632d]/10 border border-[#e8632d]/20 p-6">
-          <p class="text-sm font-medium text-[#e8a87c]">
+        <div class="rounded-3xl bg-ember/10 border border-ember/20 p-6">
+          <p class="text-sm font-medium text-ember-warm">
             Groups of 8 or more?
           </p>
           <p class="mt-1 text-xs text-white/40">
