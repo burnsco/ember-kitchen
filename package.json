@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "astro dev",
     "build": "bun run typecheck && astro build",
-    "deploy": "bun run build && npx wrangler deploy",
-    "deploy:dry-run": "npx wrangler deploy --dry-run",
+    "deploy": "bun run build && npx wrangler deploy --config dist/server/wrangler.json",
+    "deploy:dry-run": "bun run build && npx wrangler deploy --dry-run --config dist/server/wrangler.json",
     "cf:status": "../scripts/cf-portfolio.sh status ember-kitchen",
     "typecheck": "astro check",
     "preview": "astro preview",
@@ -38,7 +38,7 @@
     "oxlint": "^1.60.0",
     "postcss": "^8.5.10",
     "tailwindcss": "^4.2.2",
-    "typescript": "^6.0.2"
+    "typescript": "^6.0.3"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
